@@ -1,0 +1,68 @@
+.NavigationSection {
+  max-width: 170rem;
+  margin: 0 auto;
+  margin-top: 4.2rem;
+}
+.NavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.LocationIcon {
+  width: 2.2rem;
+  height: auto;
+}
+.NavLeft {
+  gap: 1.2rem;
+}
+.NavLeft,
+.NavRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NavMid {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavMid > input {
+  caret-color: white;
+  text-indent: 2.8rem;
+  background-color: rgba(30, 30, 30, 255);
+  width: 50rem;
+  border-radius: 2.4rem;
+  border: none;
+  padding: 1.2rem 1.2rem;
+}
+.NavMid > input:focus {
+  outline: none;
+}
+.sarchIcon {
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+.icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.iconParrent,
+.dummyParrent {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1.4rem;
+  overflow: visible;
+  background-color: rgba(35, 35, 37, 255);
+}
+.dummyParrent {
+  margin-right: 1.2rem;
+}
