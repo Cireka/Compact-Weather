@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   padding: 0;
   margin: 0;
 }
@@ -17,7 +17,6 @@
 body {
   background-color: rgba(16, 15, 19, 255);
   overflow-x: hidden;
-  max-width: 100vw;
   animation: myAnim 1s ease 0s 1 normal forwards;
 }
 
@@ -25,7 +24,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 html {
   font-family: "Mulish", sans-serif;

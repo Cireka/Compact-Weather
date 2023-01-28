@@ -1,8 +1,14 @@
+import Forecast from "Components/Forecast/Forecast";
 import Navigation from "Components/Navigation/Navigation";
-import style from "./Landing.module.css";
+import { Fragment } from "react";
 
 const Landing = () => {
-  return <Navigation />;
+  return (
+    <Fragment>
+      <Navigation />
+      <Forecast />
+    </Fragment>
+  );
 };
 
 export default Landing;

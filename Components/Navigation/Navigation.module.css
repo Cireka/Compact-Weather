@@ -8,12 +8,20 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .LocationIcon {
   width: 2.2rem;
   height: auto;
 }
 .NavLeft {
   gap: 1.2rem;
+}
+.Country {
+  font-weight: 300;
+}
+
+.NavLeft > h2 {
+  font-weight: 600;
 }
 .NavLeft,
 .NavRight {
@@ -29,6 +37,7 @@
 }
 
 .NavMid > input {
+  color: white;
   caret-color: white;
   text-indent: 2.8rem;
   background-color: rgba(30, 30, 30, 255);

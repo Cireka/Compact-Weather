@@ -16,7 +16,9 @@ const Navigation = () => {
               <BsGridFill className={style.icon} />
             </div>
             <MdLocationPin className={style.LocationIcon} />
-            <h2>Georgia, Tbilisi</h2>
+            <h2>
+              Tbilisi, <span className={style.Country}>Georgia</span>
+            </h2>
           </div>
           <div className={style.NavMid}>
             <RxMagnifyingGlass className={style.sarchIcon} />

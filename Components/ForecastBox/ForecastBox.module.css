@@ -1,0 +1,60 @@
+.ForeCastBoxParrent {
+  color: black;
+  padding: 0.8rem;
+  border-radius: 1.6rem;
+  background: rgb(188, 216, 237);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(188, 216, 237, 1) 74%,
+    rgba(174, 202, 223, 1) 74%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(188, 216, 237, 1) 74%,
+    rgba(174, 202, 223, 1) 74%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(188, 216, 237, 1) 74%,
+    rgba(174, 202, 223, 1) 74%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bcd8ed",endColorstr="#aecadf",GradientType=1);
+  width: 28rem;
+  height: 20rem;
+}
+.Icon {
+  width: 7.5rem;
+  height: auto;
+}
+
+.TopParrent {
+  margin-top: 0.6rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.TopParrent > h2 {
+  font-size: 2.2rem;
+}
+
+.Colum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.Colum > div > p {
+  line-height: 1.3;
+  font-size: 1.2rem;
+}
+.Colum > h1 {
+  font-size: 4.2rem;
+}
+
+.Data > h1 {
+  font-size: 4.2rem;
+}
+.Data > * {
+  line-height: 1.5;
+}

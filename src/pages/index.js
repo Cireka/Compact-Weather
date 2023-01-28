@@ -1,3 +1,4 @@
+import ForecastBox from "Components/ForecastBox/ForecastBox";
 import Landing from "Components/Landing/Landing";
 import { Fragment } from "react";
 
