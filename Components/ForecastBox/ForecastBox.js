@@ -10,7 +10,7 @@ const ForecastBox = () => {
         <h2>11:42 Pm</h2>
       </div>
       <div className={style.TopParrent}>
-        <div className={style.Colum}>
+        <div className={`${style.Colum} ${style.Test}`}>
           <h1>16°</h1>
           <div>
             <p>
