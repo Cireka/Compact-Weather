@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const WeatherDataProvider = (props) => {
-  const [Location, setLocation] = useState([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const key1 = "6b080e7b3075932543b5156ad0e54213";
@@ -18,14 +18,14 @@ const WeatherDataProvider = (props) => {
           `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${key1}`
         );
         const Weather = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=57&lon=-2.15&appid=${key1}`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=57&lon=-2.15&appid=${key1}&units=metric`
         );
         const all = [Cords, Weather];
 
         const weatherData = all.map((i) => {
           return i.data;
         });
-        setLocation(weatherData);
+        setData(weatherData);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -35,11 +35,22 @@ const WeatherDataProvider = (props) => {
       fetchData();
     }
   }, [loading]);
-  console.log(Location);
 
-  const test = [];
+  console.log(data);
+
+  const dataContext = {
+    Temp: data[1]?.list[0].main.temp,
+    RealFeel: data[1]?.list[0].main.feels_like,
+    Humidity: data[1]?.list[0].main.humidity,
+    Pressure: data[1]?.list[0].main.pressure,
+    Sunset: data[1]?.city.sunset,
+    Sunrise: data[1]?.city.sunrise,
+  };
+
   return (
-    <DataContext.Provider value={test}>{props.children}</DataContext.Provider>
+    <DataContext.Provider value={dataContext}>
+      {props.children}
+    </DataContext.Provider>
   );
 };
 

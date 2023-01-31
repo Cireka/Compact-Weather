@@ -2,7 +2,7 @@ import img from "../../public/Weather Icons/sun.png";
 import Image from "next/image";
 import style from "./ForecastBox.module.css";
 
-const ForecastBox = () => {
+const ForecastBox = (props) => {
   return (
     <div className={style.ForeCastBoxParrent}>
       <div className={style.TopParrent}>
@@ -11,19 +11,19 @@ const ForecastBox = () => {
       </div>
       <div className={style.TopParrent}>
         <div className={`${style.Colum} ${style.Test}`}>
-          <h1>16°</h1>
+          <h1>{props.Temp}°</h1>
           <div>
             <p>
-              Real Feel <strong>18*</strong>
+              Real Feel <strong>{props.RealFeel}</strong>
             </p>
             <p>
-              Wind <strong>5-8Km/h</strong>
+              Wind <strong>{props.Wind}</strong>
             </p>
             <p>
               Pressure <strong> 100MB</strong>
             </p>
             <p>
-              Humidity <strong>51%</strong>
+              Humidity <strong>{props.Humidity}</strong>
             </p>
           </div>
         </div>
@@ -31,10 +31,10 @@ const ForecastBox = () => {
           <Image className={style.Icon} alt="Weather Icon" src={img} />
           <div>
             <p>
-              SunSet <strong>10:00 Pm</strong>
+              SunSet <strong>{props.Sunset} </strong>
             </p>
             <p>
-              SunRise <strong>10:00 Am</strong>
+              SunRise <strong>{props.Sunrise}</strong>
             </p>
           </div>
         </div>
