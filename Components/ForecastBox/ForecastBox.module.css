@@ -1,7 +1,7 @@
 .ForeCastBoxParrent {
   color: black;
   padding: 0.8rem;
-  border-radius: 1.6rem;
+  border-radius: 1.2rem;
   background: rgb(188, 216, 237);
   background: -moz-linear-gradient(
     0deg,
@@ -18,9 +18,10 @@
     rgba(188, 216, 237, 1) 74%,
     rgba(174, 202, 223, 1) 74%
   );
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bcd8ed",endColorstr="#aecadf",GradientType=1);
-  width: 28rem;
-  height: 20rem;
+  width: 32rem;
+  height: 21rem;
 }
 .Icon {
   width: 7.5rem;
@@ -28,17 +29,13 @@
 }
 
 .TopParrent {
-  margin-top: 0.6rem;
   margin-bottom: 1.8rem;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 .TopParrent > h2 {
-  font-size: 2.2rem;
-}
-.Test {
-  margin-top: 1rem;
+  font-size: 3.2rem;
 }
 
 .Colum {

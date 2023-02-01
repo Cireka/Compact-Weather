@@ -1,6 +1,8 @@
 import React from "react";
 
 const DataContext = React.createContext({
+  EntireData: [],
+  WeekDay: "",
   Temp: 0,
   RealFeel: 0,
   Humidity: 0,

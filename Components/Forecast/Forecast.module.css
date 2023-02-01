@@ -22,7 +22,6 @@
 }
 .DataBoxParrent {
   display: flex;
-  justify-content: flex-start;
-  gap: 1.8rem;
+  justify-content: space-around;
   align-items: flex-start;
 }
