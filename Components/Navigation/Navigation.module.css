@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.NavMid > input {
+.NavMid > form > input {
   color: white;
   caret-color: white;
   text-indent: 2.8rem;
@@ -46,7 +46,7 @@
   border: none;
   padding: 1.2rem 1.2rem;
 }
-.NavMid > input:focus {
+.NavMid > form > input:focus {
   outline: none;
 }
 .sarchIcon {

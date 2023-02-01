@@ -6,7 +6,24 @@ import { GiStripedSun } from "react-icons/gi";
 import { FaMoon } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
 import { RxMagnifyingGlass } from "react-icons/rx";
+
+import { useContext } from "react";
+import DataContext from "Components/Context/weather-context";
+import { useRef } from "react";
+import { useState } from "react";
 const Navigation = () => {
+  const ctx = useContext(DataContext);
+  const [inputValue, setInputValue] = useState(``);
+  const ref = useRef();
+  const inputChangeHandler = () => {
+    setInputValue(`${ref.current.value}`);
+  };
+
+  const SubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(event);
+    ctx.updateCity(inputValue);
+  };
   return (
     <Fragment>
       <section className={style.NavigationSection}>
@@ -21,8 +38,15 @@ const Navigation = () => {
             </h2>
           </div>
           <div className={style.NavMid}>
-            <RxMagnifyingGlass className={style.sarchIcon} />
-            <input placeholder="Search city..." type="search" />
+            <form onSubmit={SubmitHandler}>
+              <RxMagnifyingGlass type="submit" className={style.sarchIcon} />
+              <input
+                ref={ref}
+                onChange={inputChangeHandler}
+                placeholder="Search city..."
+                type="search"
+              />
+            </form>
           </div>
           <div className={style.NavRight}>
             <div className={style.iconParrent}>

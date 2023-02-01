@@ -12,6 +12,11 @@ const WeatherDataProvider = (props) => {
   const key3 = "d64167e5be9b86d7f9eaceafd657e860";
   const key4 = "a8895e0f9b0488fafd6f168b57eee099";
 
+  const updateCity = (city) => {
+    setCitySarch(city);
+    setLoading(true);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,19 +33,13 @@ const WeatherDataProvider = (props) => {
     if (loading) {
       fetchData();
     }
-  }, [loading]);
+  }, [loading, citySarch]);
 
   console.log(data);
 
   const dataContext = {
     EntireData: data,
-    WeekDay: data.list?.[0].dt_txt,
-    Temp: data.list?.[0].main.temp,
-    RealFeel: data.list?.[0].main.feels_like,
-    Humidity: data.list?.[0].main.humidity,
-    Pressure: data.list?.[0].main.pressure,
-    Sunset: data.city?.sunset,
-    Sunrise: data.city?.sunrise,
+    updateCity: updateCity,
   };
 
   return (
