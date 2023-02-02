@@ -1,11 +1,12 @@
 import DataContext from "./weather-context";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import axios from "axios";
 
 const WeatherDataProvider = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [citySarch, setCitySarch] = useState("Moscow");
+  const [wrongLocation, setWrongLOcation] = useState(true);
 
   const key1 = "6b080e7b3075932543b5156ad0e54213";
   const key2 = "b6f446df071d7989d0a2bf90a07912b1";
@@ -26,7 +27,9 @@ const WeatherDataProvider = (props) => {
         const weatherData = Weather.data;
         setData(weatherData);
         setLoading(false);
+        setWrongLOcation(true);
       } catch (error) {
+        setWrongLOcation(false);
         console.error(error);
       }
     };
@@ -35,11 +38,10 @@ const WeatherDataProvider = (props) => {
     }
   }, [loading, citySarch]);
 
-  console.log(data);
-
   const dataContext = {
     EntireData: data,
     updateCity: updateCity,
+    errorStatus: wrongLocation,
   };
 
   return (

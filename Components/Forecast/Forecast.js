@@ -51,7 +51,6 @@ const Forecast = () => {
               return index % 8 === 0;
             })
             .map((data) => {
-              console.log(data);
               let Temp = data.main.temp;
               let Sunset = data.city?.sunset;
               let Sunrise = data.city?.sunrise;
@@ -61,9 +60,11 @@ const Forecast = () => {
               let Wind = data.wind.speed;
               let Date = data.dt;
               let Visiblity = data.visibility;
+              let icon = data.weather[0].icon;
 
               return (
                 <ForecastBox
+                  Icon={icon}
                   Sunrise={"Error"}
                   Sunset={"Error"}
                   Temp={Temp}

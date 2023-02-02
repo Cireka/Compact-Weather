@@ -21,9 +21,13 @@ const Navigation = () => {
 
   const SubmitHandler = (event) => {
     event.preventDefault();
-    console.log(event);
     ctx.updateCity(inputValue);
+    setInputValue("");
   };
+  const ErrorStatus = ctx.errorStatus;
+  const Data = ctx.EntireData;
+  const Location = Data.city?.name;
+
   return (
     <Fragment>
       <section className={style.NavigationSection}>
@@ -34,18 +38,27 @@ const Navigation = () => {
             </div>
             <MdLocationPin className={style.LocationIcon} />
             <h2>
-              Tbilisi, <span className={style.Country}>Georgia</span>
+              <span className={style.Country}>{Location}</span>
             </h2>
           </div>
           <div className={style.NavMid}>
-            <form onSubmit={SubmitHandler}>
+            <form className={style.Form} onSubmit={SubmitHandler}>
               <RxMagnifyingGlass type="submit" className={style.sarchIcon} />
               <input
                 ref={ref}
                 onChange={inputChangeHandler}
                 placeholder="Search city..."
+                value={inputValue}
                 type="search"
               />
+
+              <h1
+                className={`${
+                  ErrorStatus ? style.ErrorMsgNone : style.ErrorMsg
+                }`}
+              >
+                Location not found. Please check your spelling and try again.
+              </h1>
             </form>
           </div>
           <div className={style.NavRight}>
