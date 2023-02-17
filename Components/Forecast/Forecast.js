@@ -28,9 +28,7 @@ const Forecast = () => {
       <section className={style.ForecastSection}>
         <div className={style.ForecastContainer}>
           <div className={style.leftForecastParrent}>
-            <h2>Today</h2>
-            <h2>Tomorow</h2>
-            <h2>Next 7 Days</h2>
+            <h2>Forecast For Next 5 Days</h2>
           </div>
         </div>
         <div className={style.DataBoxParrent}>
