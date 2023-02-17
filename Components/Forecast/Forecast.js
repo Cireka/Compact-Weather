@@ -4,20 +4,11 @@ import { Fragment } from "react";
 import style from "./Forecast.module.css";
 import { useContext } from "react";
 import DataContext from "Components/Context/weather-context";
+import WeatherChart from "Components/Chart/WeatherChart";
 
 const Forecast = () => {
   const ctx = useContext(DataContext);
-
   let Data = ctx.EntireData;
-
-  // let Temp = Data.list?.[0].main.temp;
-  // let Sunset = Data.city?.sunset;
-  // let Sunrise = Data.city?.sunrise;
-  // let RealFeel = Data.list?.[0].main.feels_like;
-  // let Humidity = Data.list?.[0].main.humidity;
-  // let Pressure = Data.list?.[0].main.pressure;
-  // let WeekDay = Data.list?.[0].dt_txt;
-  console.log(Data);
 
   function TimeConvertor(timestamp) {
     const date = new Date(timestamp * 1000);
@@ -41,9 +32,6 @@ const Forecast = () => {
             <h2>Tomorow</h2>
             <h2>Next 7 Days</h2>
           </div>
-          {/* <div className={style.rightForecastParrent}>
-            <h2>Chance Of Rain</h2>
-          </div> */}
         </div>
         <div className={style.DataBoxParrent}>
           {Data.list
@@ -78,6 +66,9 @@ const Forecast = () => {
                 />
               );
             })}
+        </div>
+        <div className={style.ChartParrent}>
+          <WeatherChart />
         </div>
       </section>
     </Fragment>
