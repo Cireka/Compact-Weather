@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import { useContext } from "react";
-import DataContext from "Components/Context/weather-context";
 
-const WeatherChart = () => {
+// import { useContext } from "react";
+// import DataContext from "Components/Context/weather-context";
+
+const WeatherChart = (props) => {
   const chartRef = useRef(null);
-  const ctx = useContext(DataContext);
-  let Data = ctx.EntireData;
+  // const ctx = useContext(DataContext);
+  let Data = props.Data;
+  let Title = props.Title;
+
   function TimeConvertor(timestamp) {
     const date = new Date(timestamp * 1000);
     const day = date.getUTCDate().toString().padStart(2, "0");
@@ -30,23 +33,23 @@ const WeatherChart = () => {
       labels: Data.list?.map((item) => {
         return TimeConvertor(item.dt);
       }),
-      datasets: [
-        {
-          label: "Fluctuation Of Avrage Temperature Over Next 5 Days",
-          data: Data.list?.map((item) => {
-            return item.main.temp;
-          }),
-
-          fill: false,
-          borderColor: "rgb(75, 192, 192)",
-          tension: 0.1,
-        },
-      ],
+      datasets: [props.DataSet],
     };
 
     const chartOptions = {
       responsive: true,
       maintainAspectRatio: false,
+      scales: {
+        y: {
+          ticks: {
+            // Callback function to format the ticks
+            callback: function (value, index, values) {
+              // Append the '°C' symbol to the value
+              return value + `${props.symbol}`;
+            },
+          },
+        },
+      },
     };
 
     const lineChart = new Chart(chartCanvas, {
