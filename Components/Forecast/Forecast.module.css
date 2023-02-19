@@ -56,3 +56,11 @@
   color: #f2cd5c !important;
   text-shadow: 0px 0px 10px #f2cd5c !important;
 }
+.ToggleLight {
+  transition: ease-in-out 0.3s;
+  color: black !important;
+  text-shadow: 0px 0px 10px black !important;
+}
+.ToggleDefault {
+  color: black !important;
+}

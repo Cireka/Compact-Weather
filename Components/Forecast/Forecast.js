@@ -6,8 +6,11 @@ import DataContext from "Components/Context/weather-context";
 import WeatherChart from "Components/Chart/WeatherChart";
 
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const Forecast = () => {
+  const { theme, setTheme } = useTheme();
+
   const ctx = useContext(DataContext);
   let Data = ctx.EntireData;
 
@@ -84,8 +87,7 @@ const Forecast = () => {
             })
             .map((data) => {
               let Temp = data.main.temp;
-              let Sunset = data.city?.sunset;
-              let Sunrise = data.city?.sunrise;
+
               let RealFeel = data.main.feels_like;
               let Humidity = data.main.humidity;
               let Pressure = data.main.pressure;
@@ -112,26 +114,56 @@ const Forecast = () => {
             })}
         </div>
         <div className={style.ChartParrent}>
-          <div className={style.statButtonsParrent}>
-            <button
-              className={data === "Temp" && style.Toggle}
-              onClick={TempStatsHandler}
-            >
-              Avrage Temperature
-            </button>
-            <button
-              className={data === "Wind" && style.Toggle}
-              onClick={WindStatsHandler}
-            >
-              Avrage WindSpeed
-            </button>
-            <button
-              className={data === "Humid" && style.Toggle}
-              onClick={HumidStatsHandler}
-            >
-              Avrage Humidity
-            </button>
-          </div>
+          {theme === "dark" && (
+            <div className={style.statButtonsParrent}>
+              <button
+                className={data === "Temp" && style.Toggle}
+                onClick={TempStatsHandler}
+              >
+                Avrage Temperature
+              </button>
+              <button
+                className={data === "Wind" && style.Toggle}
+                onClick={WindStatsHandler}
+              >
+                Avrage WindSpeed
+              </button>
+              <button
+                className={data === "Humid" && style.Toggle}
+                onClick={HumidStatsHandler}
+              >
+                Avrage Humidity
+              </button>
+            </div>
+          )}
+          {theme === "light" && (
+            <div className={style.statButtonsParrent}>
+              <button
+                className={
+                  data === "Temp" ? style.ToggleLight : style.ToggleDefault
+                }
+                onClick={TempStatsHandler}
+              >
+                Avrage Temperature
+              </button>
+              <button
+                className={
+                  data === "Wind" ? style.ToggleLight : style.ToggleDefault
+                }
+                onClick={WindStatsHandler}
+              >
+                Avrage WindSpeed
+              </button>
+              <button
+                className={
+                  data === "Humid" ? style.ToggleLight : style.ToggleDefault
+                }
+                onClick={HumidStatsHandler}
+              >
+                Avrage Humidity
+              </button>
+            </div>
+          )}
           {data === "Temp" && (
             <WeatherChart
               Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}

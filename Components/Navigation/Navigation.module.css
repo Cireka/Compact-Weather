@@ -39,7 +39,7 @@
   align-items: center;
 }
 
-.NavMid > form > input {
+.SarchInput {
   color: white;
   caret-color: white;
   text-indent: 2.8rem;
@@ -49,9 +49,23 @@
   border: none;
   padding: 1.2rem 1.2rem;
 }
-.NavMid > form > input:focus {
+.SarchInput:focus {
   outline: none;
 }
+.SarchInputLight {
+  color: black;
+  caret-color: black;
+  text-indent: 2.8rem;
+  background-color: white;
+  width: 50rem;
+  border-radius: 2.4rem;
+  border: none;
+  padding: 1.2rem 1.2rem;
+}
+.SarchInputLight:focus {
+  outline: none;
+}
+
 .Form {
   display: flex;
   flex-direction: column;
@@ -82,7 +96,7 @@
   animation: myAnim 1s ease-in-out 0s 1 normal forwards;
   position: absolute;
   font-weight: 400;
-  color: white;
+
   margin-top: 3.2rem;
   top: 3.2rem;
 }
@@ -103,10 +117,7 @@
   width: 2rem;
   height: 2rem;
 }
-.icon {
-  width: 1.8rem;
-  height: 1.8rem;
-}
+
 .iconParrent,
 .dummyParrent {
   cursor: pointer;
@@ -120,4 +131,47 @@
 }
 .dummyParrent {
   margin-right: 1.2rem;
+}
+
+.switch {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  background-color: #212529;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.iconMoon,
+.iconSun {
+  position: absolute;
+  z-index: 10;
+}
+.iconSun {
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.iconMoon {
+  left: 10px;
+  top: 13px;
+  width: 32px;
+  height: 32px;
+}
+
+.switch[data-isOn="true"] {
+  justify-content: flex-end;
+}
+.handle {
+  width: 60px;
+  height: 60px;
+  background-color: #537fe7;
+  border-radius: 40px;
+}
+.CountryLight {
+  color: #4a4a4a;
 }

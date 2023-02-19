@@ -14,12 +14,6 @@
   }
 }
 
-body {
-  background-color: rgba(16, 15, 19, 255);
-  overflow-x: hidden;
-  animation: myAnim 1s ease 0s 1 normal forwards;
-}
-
 html,
 body {
   padding: 0;
@@ -30,4 +24,9 @@ html {
   font-family: "Mulish", sans-serif;
   font-size: 62.5%;
   color: white;
+}
+[data-theme="light"],
+[data-theme="light"] body {
+  color: #000;
+  background: #edede9;
 }
