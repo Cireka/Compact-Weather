@@ -5,7 +5,7 @@ const DataContext = React.createContext({
   updateCity: (city) => {},
   toggleDarkMode: () => {},
   errorStatus: "",
-  DarkMode: "true",
+  DarkMode: true,
 });
 
 export default DataContext;

@@ -12,7 +12,7 @@ const ForecastBox = (props) => {
       </div>
       <div className={style.TopParrent}>
         <div className={`${style.Colum} `}>
-          <h1>{props.Temp}°</h1>
+          <h1>{props.Temp}°C</h1>
           <div>
             <p>
               Real Feel <strong>{props.RealFeel}°</strong>

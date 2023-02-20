@@ -175,3 +175,117 @@
 .CountryLight {
   color: #4a4a4a;
 }
+
+@media only screen and (max-width: 1731px) {
+  .NavContainer {
+    padding: 0 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 962px) {
+  .switch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  .handle {
+    width: 40px;
+    height: 40px;
+    background-color: #537fe7;
+    border-radius: 40px;
+  }
+  .iconSun {
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  .iconMoon {
+    left: 10px;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+  }
+}
+@media only screen and (max-width: 854px) {
+  .SarchInput {
+    width: 30rem;
+  }
+
+  .SarchInputLight {
+    width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  .SarchInput {
+    width: 15rem;
+  }
+  .SarchInput:focus {
+    outline: none;
+  }
+  .SarchInputLight {
+    width: 15rem;
+  }
+  .SarchInputLight:focus {
+    outline: none;
+  }
+  .ErrorMsg {
+    width: 400px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .ErrorMsg {
+    width: 200px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .NavContainer {
+    padding: 0 2.2rem;
+    gap: 1.2rem;
+  }
+  .NavLeft {
+    gap: 0.2rem;
+  }
+
+  .switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+  }
+  .handle {
+    width: 25px;
+    height: 25px;
+    background-color: #537fe7;
+    border-radius: 40px;
+  }
+  .iconSun {
+    right: 2px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+  }
+  .iconMoon {
+    left: 6px;
+    top: 1px;
+    width: 12px;
+    height: 22px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .NavContainer {
+    padding: 0 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 311px) {
+  .NavContainer {
+    padding: 0rem;
+  }
+}

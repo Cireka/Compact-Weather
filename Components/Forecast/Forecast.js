@@ -76,114 +76,118 @@ const Forecast = () => {
             <h2>Forecast For Next 5 Days</h2>
           </div>
         </div>
-        <div className={style.DataBoxParrent}>
-          {Data.list
-            ?.filter((item, index) => {
-              return index % 8 === 0;
-            })
-            .map((data) => {
-              let Temp = data.main.temp;
+        <div className={style.DataBoxContainer}>
+          <div className={style.DataBoxParrent}>
+            {Data.list
+              ?.filter((item, index) => {
+                return index % 8 === 0;
+              })
+              .map((data) => {
+                let Temp = data.main.temp;
 
-              let RealFeel = data.main.feels_like;
-              let Humidity = data.main.humidity;
-              let Pressure = data.main.pressure;
-              let Wind = data.wind.speed;
-              let Date = data.dt;
-              let Visiblity = data.visibility;
-              let icon = data.weather[0].icon;
+                let RealFeel = data.main.feels_like;
+                let Humidity = data.main.humidity;
+                let Pressure = data.main.pressure;
+                let Wind = data.wind.speed;
+                let Date = data.dt;
+                let Visiblity = data.visibility;
+                let icon = data.weather[0].icon;
 
-              return (
-                <ForecastBox
-                  Icon={icon}
-                  Sunrise={"Error"}
-                  Sunset={"Error"}
-                  Temp={Temp}
-                  RealFeel={RealFeel}
-                  Humidity={Humidity}
-                  Pressure={Pressure}
-                  Wind={Wind}
-                  Visibility={Visiblity}
-                  Date={`${TimeConvertor(Date)}`}
-                  key={Math.random()}
-                />
-              );
-            })}
+                return (
+                  <ForecastBox
+                    Icon={icon}
+                    Sunrise={"Error"}
+                    Sunset={"Error"}
+                    Temp={Temp}
+                    RealFeel={RealFeel}
+                    Humidity={Humidity}
+                    Pressure={Pressure}
+                    Wind={Wind}
+                    Visibility={Visiblity}
+                    Date={`${TimeConvertor(Date)}`}
+                    key={Math.random()}
+                  />
+                );
+              })}
+          </div>
         </div>
-        <div className={style.ChartParrent}>
-          {ctx.DarkMode && (
-            <div className={style.statButtonsParrent}>
-              <button
-                className={data === "Temp" && style.Toggle}
-                onClick={TempStatsHandler}
-              >
-                Avrage Temperature
-              </button>
-              <button
-                className={data === "Wind" && style.Toggle}
-                onClick={WindStatsHandler}
-              >
-                Avrage WindSpeed
-              </button>
-              <button
-                className={data === "Humid" && style.Toggle}
-                onClick={HumidStatsHandler}
-              >
-                Avrage Humidity
-              </button>
-            </div>
-          )}
-          {!ctx.DarkMode && (
-            <div className={style.statButtonsParrent}>
-              <button
-                className={
-                  data === "Temp" ? style.ToggleLight : style.ToggleDefault
-                }
-                onClick={TempStatsHandler}
-              >
-                Avrage Temperature
-              </button>
-              <button
-                className={
-                  data === "Wind" ? style.ToggleLight : style.ToggleDefault
-                }
-                onClick={WindStatsHandler}
-              >
-                Avrage WindSpeed
-              </button>
-              <button
-                className={
-                  data === "Humid" ? style.ToggleLight : style.ToggleDefault
-                }
-                onClick={HumidStatsHandler}
-              >
-                Avrage Humidity
-              </button>
-            </div>
-          )}
-          {data === "Temp" && (
-            <WeatherChart
-              Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
-              Data={Data}
-              symbol={"°C"}
-              DataSet={TempDataSet}
-            />
-          )}
-          {data === "Wind" && (
-            <WeatherChart
-              Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
-              Data={Data}
-              symbol={" Km/h"}
-              DataSet={WindDataSet}
-            />
-          )}
-          {data === "Humid" && (
-            <WeatherChart
-              Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
-              Data={Data}
-              symbol={"%"}
-              DataSet={HumidityDataSet}
-            />
-          )}
+        <div className={style.ChartContainer}>
+          <div className={style.ChartParrent}>
+            {ctx.DarkMode && (
+              <div className={style.statButtonsParrent}>
+                <button
+                  className={data === "Temp" && style.Toggle}
+                  onClick={TempStatsHandler}
+                >
+                  Avrage Temperature
+                </button>
+                <button
+                  className={data === "Wind" && style.Toggle}
+                  onClick={WindStatsHandler}
+                >
+                  Avrage WindSpeed
+                </button>
+                <button
+                  className={data === "Humid" && style.Toggle}
+                  onClick={HumidStatsHandler}
+                >
+                  Avrage Humidity
+                </button>
+              </div>
+            )}
+            {!ctx.DarkMode && (
+              <div className={style.statButtonsParrent}>
+                <button
+                  className={
+                    data === "Temp" ? style.ToggleLight : style.ToggleDefault
+                  }
+                  onClick={TempStatsHandler}
+                >
+                  Avrage Temperature
+                </button>
+                <button
+                  className={
+                    data === "Wind" ? style.ToggleLight : style.ToggleDefault
+                  }
+                  onClick={WindStatsHandler}
+                >
+                  Avrage WindSpeed
+                </button>
+                <button
+                  className={
+                    data === "Humid" ? style.ToggleLight : style.ToggleDefault
+                  }
+                  onClick={HumidStatsHandler}
+                >
+                  Avrage Humidity
+                </button>
+              </div>
+            )}
+            {data === "Temp" && (
+              <WeatherChart
+                Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
+                Data={Data}
+                symbol={"°C"}
+                DataSet={TempDataSet}
+              />
+            )}
+            {data === "Wind" && (
+              <WeatherChart
+                Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
+                Data={Data}
+                symbol={" Km/h"}
+                DataSet={WindDataSet}
+              />
+            )}
+            {data === "Humid" && (
+              <WeatherChart
+                Title={"Fluctuation Of Avrage Temperature Over Next 5 Days"}
+                Data={Data}
+                symbol={"%"}
+                DataSet={HumidityDataSet}
+              />
+            )}
+          </div>
         </div>
       </section>
     </Fragment>

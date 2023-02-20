@@ -8,7 +8,7 @@ const WeatherDataProvider = (props) => {
   const [loading, setLoading] = useState(true);
   const [citySarch, setCitySarch] = useState("Tbilisi");
   const [wrongLocation, setWrongLOcation] = useState(true);
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode(true, { storageProvider: null });
 
   const key1 = "6b080e7b3075932543b5156ad0e54213";
   const key2 = "b6f446df071d7989d0a2bf90a07912b1";
