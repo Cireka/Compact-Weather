@@ -1,13 +1,14 @@
 import DataContext from "./weather-context";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useDarkMode from "use-dark-mode";
 
 const WeatherDataProvider = (props) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [citySarch, setCitySarch] = useState("Tbilisi");
   const [wrongLocation, setWrongLOcation] = useState(true);
-  const [darkMode, setDarkMode] = useState("true");
+  const darkMode = useDarkMode(false);
 
   const key1 = "6b080e7b3075932543b5156ad0e54213";
   const key2 = "b6f446df071d7989d0a2bf90a07912b1";
@@ -20,12 +21,7 @@ const WeatherDataProvider = (props) => {
   };
 
   const toggleDark = () => {
-    console.log("toggled");
-    if (darkMode === "true") {
-      setDarkMode("false");
-    } else if (darkMode === "false") {
-      setDarkMode("true");
-    }
+    darkMode.toggle();
   };
 
   useEffect(() => {
@@ -52,7 +48,7 @@ const WeatherDataProvider = (props) => {
     EntireData: data,
     updateCity: updateCity,
     errorStatus: wrongLocation,
-    DarkMode: darkMode,
+    DarkMode: darkMode.value,
     toggleDarkMode: toggleDark,
   };
 

@@ -4,13 +4,9 @@ import style from "./Forecast.module.css";
 import { useContext } from "react";
 import DataContext from "Components/Context/weather-context";
 import WeatherChart from "Components/Chart/WeatherChart";
-
 import { useState } from "react";
-import { useTheme } from "next-themes";
 
 const Forecast = () => {
-  const { theme, setTheme } = useTheme();
-
   const ctx = useContext(DataContext);
   let Data = ctx.EntireData;
 
@@ -114,7 +110,7 @@ const Forecast = () => {
             })}
         </div>
         <div className={style.ChartParrent}>
-          {theme === "dark" && (
+          {ctx.DarkMode && (
             <div className={style.statButtonsParrent}>
               <button
                 className={data === "Temp" && style.Toggle}
@@ -136,7 +132,7 @@ const Forecast = () => {
               </button>
             </div>
           )}
-          {theme === "light" && (
+          {!ctx.DarkMode && (
             <div className={style.statButtonsParrent}>
               <button
                 className={

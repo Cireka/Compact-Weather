@@ -1,32 +1,22 @@
 import { Fragment } from "react";
 import style from "./Navigation.module.css";
-
 import { MdLocationPin } from "react-icons/md";
 import { GiStripedSun } from "react-icons/gi";
 import { FaMoon } from "react-icons/fa";
-import { BsGridFill } from "react-icons/bs";
 import { RxMagnifyingGlass } from "react-icons/rx";
-
 import { useContext } from "react";
 import DataContext from "Components/Context/weather-context";
 import { useRef } from "react";
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 const Navigation = () => {
+  const ctx = useContext(DataContext);
   const [isOn, setIsOn] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   const toggleSwitch = () => {
+    ctx.toggleDarkMode();
     setIsOn(!isOn);
-
-    if (theme === "dark") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("dark");
-    }
   };
   const spring = {
     type: "spring",
@@ -34,7 +24,6 @@ const Navigation = () => {
     damping: 30,
   };
 
-  const ctx = useContext(DataContext);
   const [inputValue, setInputValue] = useState(``);
   const ref = useRef();
   const inputChangeHandler = () => {
@@ -58,9 +47,7 @@ const Navigation = () => {
             <MdLocationPin className={style.LocationIcon} />
             <h2>
               <span
-                className={
-                  theme === "dark" ? style.Country : style.CountryLight
-                }
+                className={ctx.DarkMode ? style.Country : style.CountryLight}
               >
                 {Location}
               </span>
@@ -71,7 +58,7 @@ const Navigation = () => {
               <RxMagnifyingGlass type="submit" className={style.sarchIcon} />
               <input
                 className={
-                  theme === "dark" ? style.SarchInput : style.SarchInputLight
+                  ctx.DarkMode ? style.SarchInput : style.SarchInputLight
                 }
                 ref={ref}
                 onChange={inputChangeHandler}
