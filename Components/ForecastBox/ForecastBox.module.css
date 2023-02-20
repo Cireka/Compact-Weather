@@ -66,4 +66,10 @@
 }
 
 @media only screen and (max-width: 1380px) {
+  .TopParrent > h2 {
+    font-size: 2.8rem;
+  }
+  .Colum > h1 {
+    font-size: 3.4rem;
+  }
 }
