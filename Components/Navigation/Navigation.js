@@ -79,7 +79,7 @@ const Navigation = () => {
           <div className={style.NavRight}>
             <div
               className={style.switch}
-              data-isOn={isOn}
+              data-ison={isOn}
               onClick={toggleSwitch}
             >
               <FaMoon color="#F4F1C9" className={style.iconMoon} />

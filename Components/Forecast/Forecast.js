@@ -116,19 +116,19 @@ const Forecast = () => {
             {ctx.DarkMode && (
               <div className={style.statButtonsParrent}>
                 <button
-                  className={data === "Temp" && style.Toggle}
+                  className={data === "Temp" ? style.Toggle : ""}
                   onClick={TempStatsHandler}
                 >
                   Avrage Temperature
                 </button>
                 <button
-                  className={data === "Wind" && style.Toggle}
+                  className={data === "Wind" ? style.Toggle : ""}
                   onClick={WindStatsHandler}
                 >
                   Avrage WindSpeed
                 </button>
                 <button
-                  className={data === "Humid" && style.Toggle}
+                  className={data === "Humid" ? style.Toggle : ""}
                   onClick={HumidStatsHandler}
                 >
                   Avrage Humidity

@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./ForecastBox.module.css";
 
 const ForecastBox = (props) => {
-  console.log(props.Icon);
+
   let iconLink = `http://openweathermap.org/img/wn/${props.Icon}@2x.png`;
   return (
     <div className={style.ForeCastBoxParrent}>
