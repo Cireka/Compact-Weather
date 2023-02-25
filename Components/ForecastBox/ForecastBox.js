@@ -3,8 +3,7 @@ import Image from "next/image";
 import style from "./ForecastBox.module.css";
 
 const ForecastBox = (props) => {
-
-  let iconLink = `http://openweathermap.org/img/wn/${props.Icon}@2x.png`;
+  let iconLink = `HTTPS://openweathermap.org/img/wn/${props.Icon}@2x.png`;
   return (
     <div className={style.ForeCastBoxParrent}>
       <div className={style.TopParrent}>
