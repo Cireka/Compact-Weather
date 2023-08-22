@@ -27,30 +27,38 @@ Explore the functionalities and benefits of real-time weather data and interacti
 Explore these features and elevate your weather-checking experience with Compact Weather.
 ## Technical Details
 
-Here are some of the key technical aspects of the Coza Store project:
+Here are some of the key technical aspects of the Compact Weather project:
 
-- **Context API for Global State Management:** Utilized the Context API to efficiently manage the global state of the application, including the innovative cart logic that enhances the shopping experience.
+- **Context API for Data Management:** Leveraged the Context API to seamlessly fetch and deliver weather data to various components throughout the application. This facilitates efficient data management and updates across the interface.
 
-- **Framer Motion for Animation:** Leveraged Framer Motion to introduce seamless and captivating animations that bring the Coza Store interface to life, providing users with an engaging and delightful journey.
+- **Dark Mode with Context:** Implemented a user-friendly dark mode feature using the Context API. Users can enjoy reduced eye strain in low-light environments by toggling between light and dark modes effortlessly.
 
-- **Swiper Slider Integration:** Incorporated the Swiper library to create an eye-catching slider on the landing page, offering an interactive way for users to explore featured products and promotions.
+- **Interactive Chart Visualizations with Chart.js:** Utilized the power of Chart.js library to create dynamic and interactive chart visualizations, making weather trends and forecasts easily understandable for users.
 
-- **First Major Project:** Coza Store represents a significant milestone as my inaugural major project, showcasing the culmination of my efforts and learning journey in web development.
+- **Next.js for Enhanced Performance:** Integrated Next.js to optimize the project's performance with features like server-side rendering (SSR) and dynamic rendering, resulting in improved loading times and enhanced SEO.
 
-These technical details illustrate the thoughtful choices and creative solutions that have gone into creating Coza Store, making it not only a functional e-commerce platform but also a testament to my growth as a developer.
+- **Use-Dark-Mode Library:** Incorporated the use-dark-mode library to simplify the implementation of the dark mode feature, enhancing user experience and accessibility.
 
-Feel free to explore and interact with Coza Store as you witness these technical details in action!
+- **User-Focused Design Principles:** The Compact Weather interface was meticulously designed with a user-centric approach, ensuring a seamless experience for users of all skill levels.
 
+- **Modular and Maintainable Codebase:** Maintained a clean and organized codebase that enhances customization, scalability, and further development of the application.
+
+- **Continuous Learning and Growth:** Compact Weather marks a significant step in my journey as a developer, showcasing the culmination of my skills and knowledge acquired in HTML, CSS, JavaScript, and React with Next.js.
+
+These technical details showcase the meticulous choices and creative solutions that enhance the functionality and user experience of Compact Weather. Experience the application firsthand and witness these technical intricacies come to life!
+
+Feel free to dive into Compact Weather, exploring its intuitive interface and interactive features. Immerse yourself in the well-thought-out design and technical implementations that make Compact Weather a versatile and user-friendly weather companion.
+
+Interact with the application, toggle between dark and light modes, visualize weather trends through interactive charts, and discover the seamless integration of Next.js for enhanced performance. This project represents the synergy between technology and user-centered design, culminating in a weather tool that's both insightful and engaging.
+
+Embark on a journey through Compact Weather and discover how these technical details seamlessly blend to provide a comprehensive and enjoyable weather-checking experience.
 
 ## Preview
-- [Project Link](cosa-store-project-ve3g-fpt3df1ji-cireka.vercel.app)
-  
-![Opera Snapshot_2023-08-22_003557_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/8e316d95-a35a-482b-be4e-be85cbc2fa6f)  
+- [Project Link](https://compact-weather-3ao1.vercel.app)
 
-| ![Opera Snapshot_2023-08-22_003823_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/6f2fda60-e2de-4a90-a1cb-3fc8cd73d772) | ![Opera Snapshot_2023-08-22_003705_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/d33efb44-7b15-4dcd-a2ae-1fd07b6e3138) |
+| ![Opera Snapshot_2023-08-22_190854_compact-weather-3ao1 vercel app](https://github.com/Cireka/Compact-Weather/assets/63955698/342ce0a7-0203-400a-a041-081de297b619) | ![Opera Snapshot_2023-08-22_190841_compact-weather-3ao1 vercel app](https://github.com/Cireka/Compact-Weather/assets/63955698/f8375499-5a3c-4ed8-acef-4a0f25fe94f6) |
 | ------------- | ------------- |
-| ![Opera Snapshot_2023-08-22_003705_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/d33efb44-7b15-4dcd-a2ae-1fd07b6e3138)  | ![Opera Snapshot_2023-08-22_003748_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/7443b5c5-8e27-4278-8ccb-f995f3210831) |
-| ![Opera Snapshot_2023-08-22_003802_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/3135da2a-4b9d-46b9-98c7-69b87cd32e51) | ![Opera Snapshot_2023-08-22_004002_cosa-store-project-ve3g vercel app](https://github.com/Cireka/Cosa-Store-Project/assets/63955698/6360b796-56e5-47bd-b911-4025dc7407cb) |
+
 
 ## Installation
 
@@ -59,12 +67,12 @@ To run this project on your local environment, follow these simple steps:
 1. **Clone Repository:** Download or clone the repository to your local machine.
    ```bash
    
-   git clone https://github.com/Cireka/Cosa-Store-Project.git
+   git clone https://github.com/Cireka/Compact-Weather.git
 
 2. **Install Dependencies:** Navigate to the project directory and install the required dependencies.
    ```bash
    
-   cd Cosa-Store-Project
+   cd Compact-Weather
    npm install
 
 3. **Start Development Server:** Once the dependencies are installed, start the development server.
