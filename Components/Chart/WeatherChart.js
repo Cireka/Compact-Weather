@@ -5,7 +5,6 @@ const WeatherChart = (props) => {
   const chartRef = useRef(null);
 
   let Data = props.Data;
-  let Title = props.Title;
 
   function TimeConvertor(timestamp) {
     const date = new Date(timestamp * 1000);

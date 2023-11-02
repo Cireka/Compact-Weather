@@ -10,10 +10,12 @@ const WeatherDataProvider = (props) => {
   const [wrongLocation, setWrongLOcation] = useState(true);
   const darkMode = useDarkMode(true, { storageProvider: null });
 
-  const key1 = "6b080e7b3075932543b5156ad0e54213";
-  const key2 = "b6f446df071d7989d0a2bf90a07912b1";
-  const key3 = "d64167e5be9b86d7f9eaceafd657e860";
-  const key4 = "a8895e0f9b0488fafd6f168b57eee099";
+
+
+  const key1 = process.env.NEXT_PUBLIC_KEY1;
+  const key2 = process.env.NEXT_PUBLIC_KEY2;
+  const key3 = process.env.NEXT_PUBLIC_KEY3;
+  const key4 = process.env.NEXT_PUBLIC_KEY4;
 
   const updateCity = (city) => {
     setCitySarch(city);
