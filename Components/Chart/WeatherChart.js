@@ -1,12 +1,9 @@
 import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-// import { useContext } from "react";
-// import DataContext from "Components/Context/weather-context";
-
 const WeatherChart = (props) => {
   const chartRef = useRef(null);
-  // const ctx = useContext(DataContext);
+
   let Data = props.Data;
   let Title = props.Title;
 
