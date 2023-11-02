@@ -38,9 +38,7 @@ const WeatherChart = (props) => {
       scales: {
         y: {
           ticks: {
-            // Callback function to format the ticks
-            callback: function (value, index, values) {
-              // Append the '°C' symbol to the value
+            callback: function (value) {
               return value + `${props.symbol}`;
             },
           },
